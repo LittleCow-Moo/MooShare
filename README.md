@@ -15,7 +15,7 @@ MooShare is an open-source file sharing platform designed for effortless sharing
 3. Create the following example `.env` file:
 
 ```env
-BaseLink="http://YOUR_DOMAIN_HERE:YOUR_PORT_HERE" # You can remove :YOUR_PORT_HERE if you are using 80 port
+BaseLink="http://[Domain]:[Port]" # You can remove :[Port] if you are using 80 port
 Port=80 # Change port here if you want
 ```
 
@@ -35,7 +35,7 @@ MooShare seamlessly integrates with ShareX for convenient file uploads. To confi
   "Name": "MooShare",
   "DestinationType": "ImageUploader, TextUploader, FileUploader",
   "RequestMethod": "POST",
-  "RequestURL": "http://YOUR_DOMAIN_HERE/upload?sharex=1",
+  "RequestURL": "http://[BaseLink from .env here]/upload?sharex=1",
   "Body": "MultipartFormData",
   "FileFormName": "files",
   "URL": "{response}",
