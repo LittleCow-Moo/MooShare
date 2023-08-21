@@ -44,10 +44,10 @@ app.post("/upload", upload.array("files"), (req, res) => {
   })
   const filelink =
     req.files.length != 1
-      ? req.query.sharex != "1"
-        ? baselink + "/d/" + folderid
-        : baselink + "/s/" + folderid
-      : baselink + "/d/" + folderid + "/" + req.files[0].originalname
+      ? baselink + "/d/" + folderid
+      : req.query.sharex != "1"
+      ? baselink + "/d/" + folderid + "/" + req.files[0].originalname
+      : baselink + "/s/" + folderid + "/" + req.files[0].originalname
   if (req.query.sharex == "1") return res.send(filelink)
   res.send(
     fs.readFileSync("link.html").toString().replaceAll("{link}", filelink)
